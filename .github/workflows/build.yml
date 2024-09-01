@@ -35,4 +35,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Plugin
-          path: build/libs
+          path: build/libs/RocketPlaceholders-2.3.1.jar
