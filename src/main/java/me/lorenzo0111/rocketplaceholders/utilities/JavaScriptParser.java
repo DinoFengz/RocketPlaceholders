@@ -83,8 +83,11 @@ public class JavaScriptParser<T> {
      */
     @SuppressWarnings("unchecked")
     @Nullable
-    public T parse(String string) throws ScriptException {
-        String str = PlaceholderAPI.setPlaceholders(string);
+    public T parse(Player player, String string) throws ScriptException {
+        String str = string;
+        if(player != null) {
+            str = PlaceholderAPI.setPlaceholders(player, string);
+        }
         RocketPlaceholders.getInstance().debug("Parsing expression: " + str);
 
         this.bind("Server", Bukkit.getServer());
