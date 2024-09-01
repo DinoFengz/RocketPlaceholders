@@ -47,7 +47,7 @@ public class JSCondition extends Requirement {
     public boolean apply(Player player) {
         try {
             engine.bind("Player", player);
-            Boolean result = engine.parse(expression);
+            Boolean result = engine.parse(player, expression);
             if (result == null) {
                 plugin.getLogger().severe("Expression '" + expression + "' has to return a boolean. Returning as false..");
                 return false;
