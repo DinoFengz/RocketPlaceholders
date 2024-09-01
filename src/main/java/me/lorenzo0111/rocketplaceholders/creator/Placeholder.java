@@ -116,7 +116,7 @@ public class Placeholder {
         }
 
         try {
-            String result = engine.parse(text);
+            String result = engine.parse(null, text);
             if (result == null) {
                 throw new InvalidConditionException("The expression returned a null value.");
             }
