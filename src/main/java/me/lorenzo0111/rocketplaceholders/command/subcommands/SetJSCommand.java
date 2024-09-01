@@ -85,7 +85,7 @@ public class SetJSCommand extends SubCommand {
             engine.bind("Player", user != null ? user : sender);
             engine.bind("Server", Bukkit.getServer());
             engine.bind("Placeholder", placeholder);
-            String text = engine.parse((user != null ? user : sender), builder.toString());
+            String text = engine.parse((Player) ((user != null) ? user : sender), builder.toString());
             if (text != null) {
 
                 if (user != null) {
