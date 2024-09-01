@@ -30,6 +30,7 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.ServicesManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.Nullable;
+import me.clip.placeholderapi.PlaceholderAPI;
 
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
@@ -82,7 +83,8 @@ public class JavaScriptParser<T> {
      */
     @SuppressWarnings("unchecked")
     @Nullable
-    public T parse(String str) throws ScriptException {
+    public T parse(String string) throws ScriptException {
+        String str = PlaceholderAPI.setPlaceholders(string);
         RocketPlaceholders.getInstance().debug("Parsing expression: " + str);
 
         this.bind("Server", Bukkit.getServer());
